@@ -38,6 +38,11 @@ return [
             'secret' => env('STRIPE_WEBHOOK_SECRET'),
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
+    'facebook' => [
+        'client_id' => '2167004663332977',
+        'client_secret' => '668e36d0091e13b672721b9544d7c707',
+        'redirect' => 'http://cookbook.app/login/facebook/callback'
+        ],
     ],
 
 ];
