@@ -10,6 +10,9 @@
 				<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
+				<a class="nav-link" href="/blog">Blog</a>
+			</li>
+			<li class="nav-item">
 				<a class="nav-link" href="/about">About</a>
 			</li>
 			<li class="nav-item">
@@ -20,8 +23,13 @@
 					Member
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="/users/register">Register</a>
-					<a class="dropdown-item" href="/users/login">Login</a>
+					<!-- Authentication Links -->
+					@if (Auth::guest())
+						<a class="dropdown-item" href="{{ url('/login') }}">Login</a>
+						<a class="dropdown-item" href="{{ url('/register') }}">Register</a>
+					@else
+						<a class="dropdown-item" href="{{ url('/logout') }}">Logout</a></li>
+					@endif
 				</div>
 			</li>
 		</ul>
